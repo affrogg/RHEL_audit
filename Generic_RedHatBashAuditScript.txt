@@ -2,9 +2,9 @@
 
 DATE=`date '+%m%d%y_%H%M'`
 HOST=`hostname`
-LOG=CRT.pci.2019.$HOST.$DATE.txt
+LOG=DIV.pci.YYYY.$HOST.$DATE.txt
 
-rm CRT.pci.2019.*.txt
+rm DIV.pci.YYYY.*.txt
 
 echo "-------------------------------" >> $LOG
 echo "netstat -tulpan" >> $LOG
