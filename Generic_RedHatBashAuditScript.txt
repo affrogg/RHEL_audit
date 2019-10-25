@@ -1,0 +1,50 @@
+#!/bin/bash
+
+DATE=`date '+%m%d%y_%H%M'`
+HOST=`hostname`
+LOG=CRT.pci.2019.$HOST.$DATE.txt
+
+rm CRT.pci.2019.*.txt
+
+echo "-------------------------------" >> $LOG
+echo "netstat -tulpan" >> $LOG
+echo "---------------------" >> $LOG
+netstat -tulpan >> $LOG
+echo "-------------------------------" >> $LOG
+echo "cat /etc/redhat-release" >> $LOG
+echo "---------------------" >> $LOG
+cat /etc/redhat-release >> $LOG
+echo "-------------------------------" >> $LOG
+echo "cat /etc/yum.repos.d/*.repo" >> $LOG
+echo "---------------------" >> $LOG
+cat /etc/yum.repos.d/*.repo >> $LOG
+echo "-------------------------------" >> $LOG
+echo "cat /etc/ssh/sshd_config" >> $LOG
+echo "---------------------" >> $LOG
+cat /etc/ssh/sshd_config >> $LOG
+echo "-------------------------------" >> $LOG
+echo "cat /etc/pam.d/sshd" >> $LOG
+echo "---------------------" >> $LOG
+cat /etc/pam.d/sshd >> $LOG
+echo "-------------------------------" >> $LOG
+echo "cat /etc/pam.d/system-auth" >> $LOG
+echo "---------------------" >> $LOG
+cat /etc/pam.d/system-auth >> $LOG
+echo "-------------------------------" >> $LOG
+echo "cat /etc/login.defs" >> $LOG
+echo "---------------------" >> $LOG
+cat /etc/login.defs >> $LOG
+echo "-------------------------------" >> $LOG
+echo "cat /etc/ntp.conf" >> $LOG
+echo "---------------------" >> $LOG
+cat /etc/ntp.conf >> $LOG
+echo "-------------------------------" >> $LOG
+echo "ntp cron" >> $LOG
+echo "crontab -l" >> $LOG
+echo "---------------------" >> $LOG
+crontab -l >> $LOG
+echo "-------------------------------" >> $LOG
+echo "cat /etc/rsyslog.conf" >> $LOG
+echo "---------------------" >> $LOG
+cat /etc/rsyslog.conf >> $LOG
+echo "-------------------------------" >> $LOG
